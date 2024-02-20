@@ -1,7 +1,7 @@
 require "test_helper"
 
 module Sakes
-  class RiceTest < ActiveSupport::TestCase
+  class RiceStrainTest < ActiveSupport::TestCase
     # test "the truth" do
     #   assert true
     # end
