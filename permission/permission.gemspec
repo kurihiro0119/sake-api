@@ -6,12 +6,12 @@ Gem::Specification.new do |spec|
   spec.authors     = ["kurihiro0119"]
   spec.email       = ["kuriharahironari@gmail.com"]
   spec.homepage    = 'http://mygemserver.com'
-  spec.summary     = "Summary of Sakes."
-  spec.description = "Description of Sakes."
+  spec.summary     = "Summary of Permission."
+  spec.description = "Description of Permission."
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
   # to allow pushing to a single host or delete this section to allow pushing to any host.
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+  spec.metadata["allowed_push_host"] = 'http://mygemserver.com'
 
   spec.metadata["homepage_uri"] = 'http://mygemserver.com'
   spec.metadata["source_code_uri"] = 'http://mygemserver.com'

@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  mount Sakes::Engine, at: '/sakes'
+  mount Guest::Engine, at: '/guest'
+  mount Permission::Engine, at: '/permission'
 end

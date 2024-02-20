@@ -3,7 +3,7 @@ class CreateSakesSakes < ActiveRecord::Migration[7.1]
     create_table :sakes do |t|
       t.string :name, null: false
       t.references :brand, foreign_key: true, type: :bigint
-      t.references :rice, foreign_key: true, type: :bigint
+      t.references :rice_strain, foreign_key: true, type: :bigint
       t.integer :area, limit: 1, null: false
       t.integer :sake_level, limit:1
       t.float :acid
