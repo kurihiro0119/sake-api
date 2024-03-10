@@ -5,7 +5,7 @@ module Sakes
     skip_before_action :verify_authenticity_token
 
     def index
-      sakes = Sake.all
+      sakes = ::Sakes::SakeQuery.all
 
       render json: sakes
     end
