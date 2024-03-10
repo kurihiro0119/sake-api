@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_20_153855) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_25_162923) do
   create_table "brands", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prefectures", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,7 +43,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_20_153855) do
     t.string "name", null: false
     t.bigint "brand_id"
     t.bigint "rice_strain_id"
-    t.integer "area", limit: 1, null: false
     t.integer "sake_level", limit: 1
     t.float "acid"
     t.json "polishing_rate"
@@ -45,12 +50,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_20_153855) do
     t.string "ppid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "prefecture_id"
     t.index ["brand_id"], name: "index_sakes_on_brand_id"
     t.index ["ppid"], name: "index_sakes_on_ppid", unique: true
+    t.index ["prefecture_id"], name: "index_sakes_on_prefecture_id"
     t.index ["rice_strain_id"], name: "index_sakes_on_rice_strain_id"
   end
 
   add_foreign_key "reviews", "sakes"
   add_foreign_key "sakes", "brands"
+  add_foreign_key "sakes", "prefectures"
   add_foreign_key "sakes", "rice_strains"
 end
